@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PP05Gapeev
+namespace PP05Gapeev.WindowFolder
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для ListWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ListWindow : Window
     {
-        public MainWindow()
+        public ListWindow()
         {
             InitializeComponent();
         }
