@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PP05Gapeev.DataFolder;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,22 @@ namespace PP05Gapeev.WindowFolder
         public ListWindow()
         {
             InitializeComponent();
+            ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().
+                OrderBy(c => c.IdFirmOperations);
+            CompanyCB.ItemsSource = DBEntities.GetContext()
+                .Firm.ToList();
+            MonthCB.ItemsSource = DBEntities.GetContext()
+                .Month.ToList();
+        }
+
+        private void DelDtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CreatorDtn_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

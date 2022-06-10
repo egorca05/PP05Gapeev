@@ -5,18 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PP05Gapeev.WindowFolder"
         mc:Ignorable="d"
-        Title="Список компаний" Height="450" Width="800">
+        Title="Список компаний" Height="600" Width="1200">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition Width="10"/>
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
+            <RowDefinition Height="100"/>
             <RowDefinition />
+            <RowDefinition Height="100"/>
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
+        
+        <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+            <Label Content="Компания:" Width="130" Style="{StaticResource LblNormal}"/>
+            <ComboBox x:Name="CompanyCB" SelectedItem="{Binding Firm}" DisplayMemberPath="NameFirm"
+                  SelectedValuePath="IdFirm"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
+            <Label Content="Месяц:" Width="130" Style="{StaticResource LblNormal}"/>
+            <ComboBox x:Name="MonthCB" SelectedItem="{Binding Month}" DisplayMemberPath="NameMonth"
+                  SelectedValuePath="IdMonth"/>
+        </StackPanel>
+
+        <DataGrid x:Name="ListDG" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding IdOperations}" Width="50"/>
+                <DataGridTextColumn Header="Компания" Binding="{Binding Firm.NameFirm}" Width="*"/>
+                <DataGridTextColumn Header="Месяц" Binding="{Binding Month.NameMonth}" Width="*"/>
+                <DataGridTextColumn Header="Купленно" Binding="{Binding PurchasedOperations}" Width="130"/>
+                <DataGridTextColumn Header="Проданно" Binding="{Binding SalesOperations}" Width="130"/>
+                <DataGridTextColumn Header="Цена покупки" Binding="{Binding BuyOperations}" Width="*"/>
+                <DataGridTextColumn Header="Цена продажи" Binding="{Binding SaleOperations}" Width="*"/>
+                <DataGridTextColumn Header="Итог" Binding="{Binding IncomeOperations}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="DelDtn" Content="Удалить" 
+                Grid.Column="1" Grid.Row="3" Click="DelDtn_Click"/>
+        <Button x:Name="CreatorDtn" Content="Разработчик" 
+                Grid.Column="2" Grid.Row="3" Click="CreatorDtn_Click"/>
     </Grid>
 </Window>
