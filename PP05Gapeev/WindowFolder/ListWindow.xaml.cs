@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PP05Gapeev.WindowFolder;
+using PP05Gapeev.ClassFolder;
 
 namespace PP05Gapeev.WindowFolder
 {
@@ -33,12 +35,37 @@ namespace PP05Gapeev.WindowFolder
 
         private void DelDtn_Click(object sender, RoutedEventArgs e)
         {
+            Operations operations = ListDG.SelectedItem as Operations;
+            DBEntities.GetContext().Operations.Remove(operations);
+            DBEntities.GetContext().SaveChanges();
+            ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().
+                OrderBy(c => c.IdFirmOperations);
 
         }
 
         private void CreatorDtn_Click(object sender, RoutedEventArgs e)
         {
+            AdminWindow adminWindow = new AdminWindow();
+            adminWindow.Show();
+        }
 
+        private void ListDG_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (ListDG.SelectedItem == null)
+            {
+                // MBClass.MBError("Не выбран матч для ставки");
+            }
+            else
+            {
+                Operations operations = ListDG.SelectedItem as Operations;
+                VariableClass.IdOperations = operations.IdOperations;
+                new OperationsEditWindow(ListDG.SelectedItem as Operations).Show();
+                ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().OrderBy(c => c.IdOperations);
+
+                ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().
+                    OrderBy(c => c.IdOperations);
+                this.Close();
+            }
         }
     }
 }

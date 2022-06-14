@@ -1,0 +1,43 @@
+﻿<Window x:Class="PP05Gapeev.WindowFolder.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PP05Gapeev.WindowFolder"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="450" Width="520" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition  Height="70"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Label Content="О программе" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2"
+               Style="{StaticResource LblLogo}"/>
+        <StackPanel Grid.Column="1" Grid.Row="2" 
+               Grid.ColumnSpan="2">
+            <Label Content="Программа предназначена для подсчета" Style="{StaticResource LblText}"/>
+            <Label Content="итогов разных компаний в операциях  с" Style="{StaticResource LblText}"/>
+            <Label Content="ценными бумагами" Style="{StaticResource LblText}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Grid.Row="3" 
+               Grid.ColumnSpan="2" >
+            <Label Content="Разработал" Style="{StaticResource LblText}" FontWeight="Bold"/>
+            <Label Content="Гапеев Егор Евгеньевич" Style="{StaticResource LblText}"/>
+            <Label Content="Д03-2ИСП" Style="{StaticResource LblText}"/>
+        </StackPanel>
+        <Button x:Name="ClosedBtn" Content="Закрыть" Grid.Column="1" Grid.Row="4" 
+               Grid.ColumnSpan="2" Width="200" Click="ClosedBtn_Click"/>
+    </Grid>
+</Window>

@@ -7,6 +7,25 @@
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="HorizontalContentAlignment" Value="Right"/>
         <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Margin" Value="10"/>
+    </Style>
+
+    <Style x:Key="LblText" TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
+    </Style>
+
+    <Style x:Key="LblLogo" TargetType="Label">
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="FontSize" Value="36"/>
+        <Setter Property="VerticalContentAlignment" Value="Top"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="FontWeight" Value="Bold"/>
     </Style>
 
     <Style TargetType="DataGrid">
@@ -35,7 +54,6 @@
     <Style TargetType="StackPanel">
         <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>
-        <Setter Property="Margin" Value="10"/>
     </Style>
 
     <Style TargetType="Button">
@@ -57,5 +75,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style TargetType="TextBox">
+        <Setter Property="FontFamily" Value="Roboto"/>
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="Black"/>
     </Style>
 </ResourceDictionary>
