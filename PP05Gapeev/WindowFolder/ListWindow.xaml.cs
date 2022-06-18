@@ -64,6 +64,8 @@ namespace PP05Gapeev.WindowFolder
 
                 ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().
                     OrderBy(c => c.IdOperations);
+                ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().
+               OrderBy(c => c.IdFirmOperations);
                 this.Close();
             }
         }

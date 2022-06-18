@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PP05Gapeev.WindowFolder"
         mc:Ignorable="d"
-        Title="Информация" Height="600" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Информация" Height="625" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>
@@ -19,7 +19,7 @@
             <RowDefinition  Height="70"/>
             <RowDefinition  Height="50"/>
             <RowDefinition Height="120"/>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="150"/>
             <RowDefinition Height="120"/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="10"/>
@@ -39,24 +39,34 @@
             <TextBox Text="{Binding BuyOperations}" IsEnabled="False" Width="250" Height="50"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="1" Grid.Row="4">
+        <StackPanel Grid.Column="2" Grid.Row="3">
             <Label Content="Цена продажи" Style="{StaticResource LblText}" FontWeight="Bold" Margin="5"/>
             <TextBox Text="{Binding SaleOperations}" IsEnabled="False" Width="250" Height="50"/>
         </StackPanel>
 
-        <StackPanel Grid.Column="2" Grid.Row="3">
+        <StackPanel Grid.Column="1" Grid.Row="4">
             <Label Content="Купленно" Style="{StaticResource LblText}" FontWeight="Bold" Margin="5"/>
             <TextBox x:Name="PurchasedOperationsTB" Text="{Binding PurchasedOperations}" Width="250" Height="50"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="MinBtn" Content="-" Click="MinBtn_Click" Width="110"/>
+                <Button x:Name="PlBtn" Content="+" Click="PlBtn_Click" Width="110"/>
+            </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Column="2" Grid.Row="4">
             <Label Content="Проданно" Style="{StaticResource LblText}" FontWeight="Bold" Margin="5"/>
             <TextBox x:Name="SalesOperationsTB" Text="{Binding SalesOperations}" Width="250" Height="50"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="SMinBtn" Content="-" Click="SMinBtn_Click" Width="110"/>
+                <Button x:Name="SPlBtn" Content="+" Click="SPlBtn_Click" Width="110"/>
+            </StackPanel>
         </StackPanel>
 
         <StackPanel Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="2">
             <Label Content="Итог" Style="{StaticResource LblText}" FontWeight="Bold" Margin="5"/>
-            <TextBox Text="{Binding IncomeOperations}" IsEnabled="False" Width="250" Height="50"/>
+            <TextBox x:Name="Itog" Text="{Binding IncomeOperations}" IsEnabled="False" Width="250" Height="50"/>
         </StackPanel>
+        <Button x:Name="SaveBtn" Content="Сохранить и выйти" Grid.Column="1" Grid.Row="6" Click="SaveBtn_Click_1"/>
+        <Button x:Name="ClosedBtn" Content="Выйти" Grid.Column="2" Grid.Row="6" Click="ClosedBtn_Click_1"/>
     </Grid>
 </Window>
