@@ -25,13 +25,13 @@
         <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
             <Label Content="Компания:" Width="130" Style="{StaticResource LblNormal}"/>
             <ComboBox x:Name="CompanyCB" SelectedItem="{Binding Firm}" DisplayMemberPath="NameFirm"
-                  SelectedValuePath="IdFirm"/>
+                  SelectedValuePath="IdFirm" SelectionChanged="CompanyCB_SelectionChanged"/>
         </StackPanel>
 
         <StackPanel Grid.Row="1" Grid.Column="2" Orientation="Horizontal">
             <Label Content="Месяц:" Width="130" Style="{StaticResource LblNormal}"/>
             <ComboBox x:Name="MonthCB" SelectedItem="{Binding Month}" DisplayMemberPath="NameMonth"
-                  SelectedValuePath="IdMonth"/>
+                  SelectedValuePath="IdMonth" SelectionChanged="MonthCB_SelectionChanged"/>
         </StackPanel>
 
         <DataGrid x:Name="ListDG" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 

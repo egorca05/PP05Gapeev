@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PP05Gapeev.WindowFolder"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="450" Width="520" WindowStartupLocation="CenterScreen">
+        Title="О программе" Height="450" Width="520" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>

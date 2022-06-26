@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PP05Gapeev.WindowFolder"
         mc:Ignorable="d"
-        Title="Информация" Height="625" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+        Title="Редактирование расчетного периода" Height="625" Width="800" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="10"/>

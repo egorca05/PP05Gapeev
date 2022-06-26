@@ -31,6 +31,7 @@ namespace PP05Gapeev.WindowFolder
                 .Firm.ToList();
             MonthCB.ItemsSource = DBEntities.GetContext()
                 .Month.ToList();
+
         }
 
         private void DelDtn_Click(object sender, RoutedEventArgs e)
@@ -68,6 +69,20 @@ namespace PP05Gapeev.WindowFolder
                OrderBy(c => c.IdFirmOperations);
                 this.Close();
             }
+        }
+
+        private void CompanyCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (!this.IsLoaded || (CompanyCB.SelectedItem as Firm) == null)
+                return;
+            {
+                ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().Where(h => h.IdFirmOperations == (CompanyCB.SelectedItem as Firm).IdFirm);
+            }
+        }
+
+        private void MonthCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
