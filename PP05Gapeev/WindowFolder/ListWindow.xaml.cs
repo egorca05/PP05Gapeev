@@ -86,7 +86,7 @@ namespace PP05Gapeev.WindowFolder
             if (!this.IsLoaded || (MonthCB.SelectedItem as Month) == null)
                 return;
             {
-                ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().Where(u => u.IdMonthOperations == (CompanyCB.SelectedItem as Month).IdMonth);
+                ListDG.ItemsSource = DBEntities.GetContext().Operations.ToList().Where(h => h.IdMonthOperations == (MonthCB.SelectedItem as Month).IdMonth);
             }
         }
     }
